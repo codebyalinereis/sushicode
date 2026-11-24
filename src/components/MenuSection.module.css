@@ -1,0 +1,208 @@
+.menuS {
+  padding: clamp(90px, 14vh, 150px) 0;
+  background: var(--paper);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 54px;
+}
+
+.headCopy {
+  color: rgba(23, 19, 16, 0.62);
+  max-width: 36ch;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.dish {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 28px 24px 24px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.55s var(--ease),
+    box-shadow 0.55s var(--ease);
+}
+
+.dish:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 34px 60px -30px rgba(23, 15, 6, 0.35);
+}
+
+.pic {
+  width: min(150px, 58%);
+  margin: 0 auto 18px;
+  transition: transform 0.6s var(--ease);
+}
+
+.dish:hover .pic {
+  transform: rotate(9deg) scale(1.08);
+}
+
+.dish h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.22rem;
+  letter-spacing: 0.01em;
+}
+
+.jpTag {
+  font-family: var(--jp);
+  font-size: 0.72rem;
+  color: var(--red);
+  letter-spacing: 0.28em;
+  margin-top: 4px;
+}
+
+.desc {
+  margin-top: 10px;
+  font-size: 0.83rem;
+  line-height: 1.65;
+  color: rgba(23, 19, 16, 0.6);
+  font-weight: 500;
+  min-height: 3.3em;
+}
+
+.row {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  font-weight: 600;
+}
+
+.add {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  transition: 0.35s var(--ease);
+}
+
+.dish:hover .add {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--cream);
+  transform: rotate(90deg);
+}
+
+/* banner omakase */
+.omakase {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: clamp(18px, 3.5vw, 50px);
+  align-items: center;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 22px;
+  padding: 30px clamp(24px, 3.5vw, 44px);
+  transition:
+    transform 0.55s var(--ease),
+    box-shadow 0.55s var(--ease);
+}
+
+.omakase:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 36px 70px -30px rgba(23, 19, 16, 0.5);
+}
+
+.omakase .jp {
+  font-family: var(--jp);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  color: var(--gold);
+}
+
+.omakase h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+}
+
+.omakaseBody p {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: rgba(244, 239, 228, 0.6);
+  font-weight: 500;
+}
+
+.omakase .price {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  white-space: nowrap;
+}
+
+.omakase .price em {
+  font-style: normal;
+  font-size: 0.7em;
+  opacity: 0.6;
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
+.go {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--line-l);
+  padding: 13px 22px;
+  border-radius: 99px;
+  white-space: nowrap;
+  transition: 0.35s var(--ease);
+}
+
+.omakase:hover .go {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .omakase {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .go {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pic {
+    width: 130px;
+  }
+
+  .omakase {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}

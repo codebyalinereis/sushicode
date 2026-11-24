@@ -1,0 +1,20 @@
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 120;
+}
+
+.bar {
+  height: 100%;
+  background: var(--red);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+/* sobre seções escuras, a linha acompanha o tema */
+:global(body[data-nav="dark"]) .bar {
+  background: var(--gold);
+}
